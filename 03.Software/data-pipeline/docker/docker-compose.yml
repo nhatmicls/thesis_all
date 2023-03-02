@@ -14,8 +14,8 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - AWS_ACCESS_KEY_ID=AKIAUMMWEHB3HBAJNHFV
-      - AWS_SECRET_ACCESS_KEY=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
+      - AWS_ACCESS_KEY_ID=
+      - AWS_SECRET_ACCESS_KEY=
     profiles:
       - dev
       - test
@@ -78,8 +78,6 @@ services:
       - ~/tls:/pecom/tls
       - ~/jwt:/pecom/jwt
     environment:
-      - NatsioEndpoints=nats://nats-prod:4222
-      - RemoteWriteEndpoints=http://sigv4pxy-prod:8080/workspaces/ws-4723b098-1c29-4505-8674-02c8c03fd4c8/api/v1/remote_write
       - HostAWSEndpoints=aps-workspaces.ap-southeast-1.amazonaws.com
       - credsPATH=/pecom/jwt/EC2Server.creds
       - BatchSize=50
@@ -99,8 +97,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./../..:/pecom
     environment:
-      - NatsioEndpoints=nats://nats-dev:4222
-      - RemoteWriteEndpoints=http://sigv4pxy-dev:8080/workspaces/ws-4723b098-1c29-4505-8674-02c8c03fd4c8/api/v1/remote_write
       - HostAWSEndpoints=aps-workspaces.ap-southeast-1.amazonaws.com
       - credsPATH=/pecom/jwt/EC2Server.creds
       - CortexEndpoints=http://cortex-dev:9009
@@ -118,9 +114,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./../..:/pecom
     environment:
-      - NatsioEndpoints=nats://nats-dev:4222
-      - RemoteWriteEndpoints=http://sigv4pxy-prod:8080/workspaces/ws-4723b098-1c29-4505-8674-02c8c03fd4c8/api/v1/remote_write
-      - HostAWSEndpoints=aps-workspaces.ap-southeast-1.amazonaws.com
       - credsPATH=/pecom/jwt/EC2Server.creds
       - BatchSize=50
       - PushShardCount=4
