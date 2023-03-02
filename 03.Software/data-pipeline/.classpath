@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/prometheus_remote_write"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/natsio_to_Prometheus"/>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.0.1/scala3-library_3-3.0.1.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.0.1/scala3-library_3-3.0.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.0.1/scala3-library_3-3.0.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/com/thesamet/scalapb/scalapb-runtime_3/0.11.4/scalapb-runtime_3-0.11.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/com/thesamet/scalapb/scalapb-runtime_3/0.11.4/scalapb-runtime_3-0.11.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/com/thesamet/scalapb/scalapb-runtime_3/0.11.4/scalapb-runtime_3-0.11.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/nats/jnats/2.12.0/jnats-2.12.0.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/nats/jnats/2.12.0/jnats-2.12.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/nats/jnats/2.12.0/jnats-2.12.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.8.4/snappy-java-1.1.8.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.8.4/snappy-java-1.1.8.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.8.4/snappy-java-1.1.8.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix_3/3.4.0/monix_3-3.4.0.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix_3/3.4.0/monix_3-3.4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix_3/3.4.0/monix_3-3.4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-web-client/4.1.4/vertx-web-client-4.1.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-web-client/4.1.4/vertx-web-client-4.1.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-web-client/4.1.4/vertx-web-client-4.1.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/com/thesamet/scalapb/lenses_3/0.11.4/lenses_3-0.11.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/com/thesamet/scalapb/lenses_3/0.11.4/lenses_3-0.11.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/com/thesamet/scalapb/lenses_3/0.11.4/lenses_3-0.11.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.15.8/protobuf-java-3.15.8.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.15.8/protobuf-java-3.15.8-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/com/google/protobuf/protobuf-java/3.15.8/protobuf-java-3.15.8-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.13/2.4.4/scala-collection-compat_2.13-2.4.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.13/2.4.4/scala-collection-compat_2.13-2.4.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.13/2.4.4/scala-collection-compat_2.13-2.4.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/net/i2p/crypto/eddsa/0.3.0/eddsa-0.3.0.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/net/i2p/crypto/eddsa/0.3.0/eddsa-0.3.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/net/i2p/crypto/eddsa/0.3.0/eddsa-0.3.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-execution_3/3.4.0/monix-execution_3-3.4.0.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-execution_3/3.4.0/monix-execution_3-3.4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-execution_3/3.4.0/monix-execution_3-3.4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-catnap_3/3.4.0/monix-catnap_3-3.4.0.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-catnap_3/3.4.0/monix-catnap_3-3.4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-catnap_3/3.4.0/monix-catnap_3-3.4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-eval_3/3.4.0/monix-eval_3-3.4.0.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-eval_3/3.4.0/monix-eval_3-3.4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-eval_3/3.4.0/monix-eval_3-3.4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-tail_3/3.4.0/monix-tail_3-3.4.0.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-tail_3/3.4.0/monix-tail_3-3.4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-tail_3/3.4.0/monix-tail_3-3.4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-reactive_3/3.4.0/monix-reactive_3-3.4.0.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-reactive_3/3.4.0/monix-reactive_3-3.4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-reactive_3/3.4.0/monix-reactive_3-3.4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-java_3/3.4.0/monix-java_3-3.4.0.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-java_3/3.4.0/monix-java_3-3.4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-java_3/3.4.0/monix-java_3-3.4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-web-common/4.1.4/vertx-web-common-4.1.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-web-common/4.1.4/vertx-web-common-4.1.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-web-common/4.1.4/vertx-web-common-4.1.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-auth-common/4.1.4/vertx-auth-common-4.1.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-auth-common/4.1.4/vertx-auth-common-4.1.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-auth-common/4.1.4/vertx-auth-common-4.1.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-core/4.1.4/vertx-core-4.1.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-core/4.1.4/vertx-core-4.1.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/vertx/vertx-core/4.1.4/vertx-core-4.1.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-internal-jctools_3/3.4.0/monix-internal-jctools_3-3.4.0.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-internal-jctools_3/3.4.0/monix-internal-jctools_3-3.4.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/monix-internal-jctools_3/3.4.0/monix-internal-jctools_3-3.4.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/implicitbox_3/0.3.4/implicitbox_3-0.3.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/implicitbox_3/0.3.4/implicitbox_3-0.3.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/monix/implicitbox_3/0.3.4/implicitbox_3-0.3.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect_3/2.5.1/cats-effect_3-2.5.1.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect_3/2.5.1/cats-effect_3-2.5.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-effect_3/2.5.1/cats-effect_3-2.5.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-common/4.1.67.Final/netty-common-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-common/4.1.67.Final/netty-common-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-common/4.1.67.Final/netty-common-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-buffer/4.1.67.Final/netty-buffer-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-buffer/4.1.67.Final/netty-buffer-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-buffer/4.1.67.Final/netty-buffer-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-transport/4.1.67.Final/netty-transport-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-transport/4.1.67.Final/netty-transport-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-transport/4.1.67.Final/netty-transport-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-handler/4.1.67.Final/netty-handler-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-handler/4.1.67.Final/netty-handler-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-handler/4.1.67.Final/netty-handler-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-handler-proxy/4.1.67.Final/netty-handler-proxy-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-handler-proxy/4.1.67.Final/netty-handler-proxy-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-handler-proxy/4.1.67.Final/netty-handler-proxy-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-http/4.1.67.Final/netty-codec-http-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-http/4.1.67.Final/netty-codec-http-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-http/4.1.67.Final/netty-codec-http-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-http2/4.1.67.Final/netty-codec-http2-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-http2/4.1.67.Final/netty-codec-http2-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-http2/4.1.67.Final/netty-codec-http2-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-resolver/4.1.67.Final/netty-resolver-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-resolver/4.1.67.Final/netty-resolver-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-resolver/4.1.67.Final/netty-resolver-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-resolver-dns/4.1.67.Final/netty-resolver-dns-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-resolver-dns/4.1.67.Final/netty-resolver-dns-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-resolver-dns/4.1.67.Final/netty-resolver-dns-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.11.4/jackson-core-2.11.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.11.4/jackson-core-2.11.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.11.4/jackson-core-2.11.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.6.1/cats-core_3-2.6.1.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.6.1/cats-core_3-2.6.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.6.1/cats-core_3-2.6.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec/4.1.67.Final/netty-codec-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec/4.1.67.Final/netty-codec-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec/4.1.67.Final/netty-codec-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-socks/4.1.67.Final/netty-codec-socks-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-socks/4.1.67.Final/netty-codec-socks-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-socks/4.1.67.Final/netty-codec-socks-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-dns/4.1.67.Final/netty-codec-dns-4.1.67.Final.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-dns/4.1.67.Final/netty-codec-dns-4.1.67.Final-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/io/netty/netty-codec-dns/4.1.67.Final/netty-codec-dns-4.1.67.Final-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.6.1/cats-kernel_3-2.6.1.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.6.1/cats-kernel_3-2.6.1-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.6.1/cats-kernel_3-2.6.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path=".cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4.jar" sourcepath=".cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/root/.cache/coursier/v1/https/repo1.maven.org/maven2/org/typelevel/simulacrum-scalafix-annotations_3/0.5.4/simulacrum-scalafix-annotations_3-0.5.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

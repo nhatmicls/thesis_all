@@ -1,0 +1,116 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "scala",
+            "request": "launch",
+            "name": "Run com.pec.Test w/ local",
+            "mainClass": "com.pec.Test",
+            "args": [],
+            "jvmOptions": [],
+            "env": {
+                "NatsioEndpoints": "nats://nats-dev:4222",
+                "credsPATH": "/pecom/creds/HCM.creds",
+                "NatsioTopics": "inverter-metrics.>"
+            }
+        },
+        {
+            "type": "scala",
+            "request": "launch",
+            "name": "Run ServerApp w/ local",
+            "mainClass": "com.pec.natsio2prom.ServerApp",
+            "args": [],
+            "jvmOptions": [],
+            "env": {
+                "NatsioEndpoints": "nats://nats-dev:4222",
+                "RemoteWriteEndpoints": "http://cortex-dev:9009/api/v1/push",
+                "HostAWSEndpoints": "",
+                "credsPATH": "/pecom/creds/EC2Server.creds",
+                "BatchSize": "50",
+                "PushShardCount": "4",
+                "NatsioTopics": "inverter-metrics.>"
+            }
+        },
+        {
+            "type": "scala",
+            "request": "launch",
+            "name": "Run ServerApp w/ local AWS",
+            "mainClass": "com.pec.natsio2prom.ServerApp",
+            "args": [],
+            "jvmOptions": [],
+            "env": {
+                "NatsioEndpoints": "nats://nats-dev:4222",
+                "RemoteWriteEndpoints": "http://sigv4pxy-dev:8080/workspaces/ws-4723b098-1c29-4505-8674-02c8c03fd4c8/api/v1/remote_write",
+                "HostAWSEndpoints": "aps-workspaces.ap-southeast-1.amazonaws.com",
+                "credsPATH": "/pecom/creds/EC2Server.creds",
+                "BatchSize": "50",
+                "PushShardCount": "4",
+                "NatsioTopics": "inverter-metrics.>"
+            }
+        },
+        {
+            "type": "scala",
+            "request": "launch",
+            "name": "Run com.pec.Test w/ server",
+            "mainClass": "com.pec.Test",
+            "args": [],
+            "jvmOptions": [],
+            "env": {
+                "NatsioEndpoints": "nats://scada.pec-cloud.com:4222",
+                "credsPATH": "/pecom/creds/HCM.creds",
+                "NatsioTopics": "inverter-metrics.>"
+            }
+        },
+        {
+            "type": "scala",
+            "request": "launch",
+            "name": "Run ServerApp w/ server cortex",
+            "mainClass": "com.pec.natsio2prom.ServerApp",
+            "args": [],
+            "jvmOptions": [],
+            "env": {
+                "NatsioEndpoints": "nats://scada.pec-cloud.com:4222",
+                "RemoteWriteEndpoints": "http://cortex-dev:9009/api/v1/push",
+                "HostAWSEndpoints": "",
+                "credsPATH": "/pecom/creds/EC2Server.creds",
+                "BatchSize": "50",
+                "PushShardCount": "4",
+                "NatsioTopics": "inverter-metrics.>"
+            }
+        },
+        {
+            "type": "scala",
+            "request": "launch",
+            "name": "Run ServerApp w/ server AWS",
+            "mainClass": "com.pec.natsio2prom.ServerApp",
+            "args": [],
+            "jvmOptions": [],
+            "env": {
+                "NatsioEndpoints": "nats://scada.pec-cloud.com:4222",
+                "RemoteWriteEndpoints": "http://sigv4pxy-dev:8080/workspaces/ws-4723b098-1c29-4505-8674-02c8c03fd4c8/api/v1/remote_write",
+                "HostAWSEndpoints": "aps-workspaces.ap-southeast-1.amazonaws.com",
+                "credsPATH": "/pecom/creds/EC2Server.creds",
+                "BatchSize": "50",
+                "PushShardCount": "4",
+                "NatsioTopics": "inverter-metrics.>"
+            }
+        },
+        {
+            "type": "scala",
+            "request": "launch",
+            "name": "Run ServerApp in EC2 AWS",
+            "mainClass": "com.pec.natsio2prom.ServerApp",
+            "args": [],
+            "jvmOptions": [],
+            "env": {
+                "credsPATH": "/pecom/creds/EC2Server.creds",
+                "BatchSize": "50",
+                "PushShardCount": "4",
+                "NatsioTopics": "inverter-metrics.>"
+            }
+        }
+    ]
+}

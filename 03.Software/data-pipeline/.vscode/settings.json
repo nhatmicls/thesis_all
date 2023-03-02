@@ -1,0 +1,12 @@
+{
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "metals.serverProperties": [
+        "-Xmx6g"
+    ],
+    "metals.javaHome": "/root/.sdkman/candidates/java/current",
+    "metals.serverVersion": "0.11.10",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "cmake.configureOnOpen": false
+}

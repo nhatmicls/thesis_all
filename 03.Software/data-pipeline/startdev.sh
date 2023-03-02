@@ -1,0 +1,1 @@
+docker run --name scaladev -v $(pwd)/..:/pecom -v /var/run/docker.sock:/var/run/docker.sock -it afreisberg/scaladev /bin/bash
