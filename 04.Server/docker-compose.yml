@@ -1,0 +1,118 @@
+services:
+  nats-prod:
+    image: nats
+    restart: always
+    volumes:
+      - ~/natsio_config:/etc/natsio_config
+      - ~/jwt:/etc/jwt
+    command: -js -c /etc/natsio_config/server.conf
+    ports:
+      - "4222:4222"
+    profiles:
+      - prod
+  nats-dev:
+    image: nats
+    restart: always
+    volumes:
+      - ./../natsio_config:/etc/natsio_config
+      - ./../../jwt:/etc/jwt
+    command: -js -c /etc/natsio_config/server.conf
+    ports:
+      - "4222:4222"
+    profiles:
+      - ext_services_prod
+      - ext_services_dev
+      - dev
+      - test
+  grafana:
+    image: grafana/grafana-enterprise:latest
+    restart: always
+    volumes:
+      - grafana_database:/var/lib/grafana
+      - grafana_config:/etc/grafana
+      - grafana_home:/usr/share/grafana
+      - grafana_logs:/var/log/grafana
+      - grafana_plugins:/var/lib/grafana/plugins
+    ports:
+      - "3000:3000"
+    profiles:
+      - ext_services_prod
+      - ext_services_dev
+      - prod
+      - dev
+  cortex-dev:
+    image: quay.io/cortexproject/cortex:v1.10.0
+    restart: always
+    volumes:
+      - ./cortex/dev:/etc/devconf
+    command: -config.file=/etc/devconf/single-process-config-blocks.yaml
+    ports:
+      - "9009:9009"
+    profiles:
+      - ext_services_dev
+      - dev
+  datapipeline:
+    image: 301499431030.dkr.ecr.ap-southeast-1.amazonaws.com/natsio-to-prometheus
+    restart: always
+    volumes:
+      - ~/tls:/pecom/tls
+      - ~/jwt:/pecom/jwt
+    environment:
+      - NatsioEndpoints=nats://nats-prod:4222
+      - RemoteWriteEndpoints=http://sigv4pxy-prod:8080/workspaces/ws-4723b098-1c29-4505-8674-02c8c03fd4c8/api/v1/remote_write
+      - HostAWSEndpoints=aps-workspaces.ap-southeast-1.amazonaws.com
+      - credsPATH=/pecom/jwt/EC2Server.creds
+      - BatchSize=50
+      - PushShardCount=4
+      - NatsioTopics=inverter-metrics.>
+      - NatsioSubscribeId=server-app-1
+    depends_on:
+      - nats-prod
+      - sigv4pxy-prod
+    profiles:
+      - prod
+  scaladev:
+    image: afreisberg/scaladev
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./../..:/pecom
+    environment:
+      - NatsioEndpoints=nats://nats-dev:4222
+      - RemoteWriteEndpoints=http://sigv4pxy-dev:8080/workspaces/ws-4723b098-1c29-4505-8674-02c8c03fd4c8/api/v1/remote_write
+      - HostAWSEndpoints=aps-workspaces.ap-southeast-1.amazonaws.com
+      - credsPATH=/pecom/jwt/EC2Server.creds
+      - CortexEndpoints=http://cortex-dev:9009
+    depends_on:
+      - nats-dev
+      - sigv4pxy-dev
+      - cortex-dev
+    profiles:
+      - dev
+  testscaladev:
+    image: 301499431030.dkr.ecr.ap-southeast-1.amazonaws.com/natsio-to-prometheus
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./../..:/pecom
+    environment:
+      - NatsioEndpoints=nats://nats-dev:4222
+      - RemoteWriteEndpoints=http://sigv4pxy-prod:8080/workspaces/ws-4723b098-1c29-4505-8674-02c8c03fd4c8/api/v1/remote_write
+      - HostAWSEndpoints=aps-workspaces.ap-southeast-1.amazonaws.com
+      - credsPATH=/pecom/jwt/EC2Server.creds
+      - BatchSize=50
+      - PushShardCount=4
+    depends_on:
+      - nats-dev
+      - sigv4pxy-dev
+    profiles:
+      - test
+
+volumes:
+  grafana_database:
+  grafana_config:
+  grafana_home:
+  grafana_logs:
+  grafana_plugins:

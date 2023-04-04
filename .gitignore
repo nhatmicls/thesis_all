@@ -1,1 +1,3 @@
 *.tar
+./metals/
+02.Firmware/Comms/build/

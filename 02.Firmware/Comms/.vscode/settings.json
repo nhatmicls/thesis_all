@@ -1,0 +1,11 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "sdkconfig": "cpp",
+        "ethernet.h": "c",
+        "esp_eth.h": "c",
+        "esp_eth_driver.h": "c",
+        "nvs_flash.h": "c",
+        "esp_netif.h": "c"
+    }
+}
