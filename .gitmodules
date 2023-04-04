@@ -1,0 +1,3 @@
+[submodule "04.Server/thesis_server_config"]
+	path = 04.Server/thesis_server_config
+	url = git@github.com:nhatmicls/thesis_server_config.git
