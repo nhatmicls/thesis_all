@@ -6,6 +6,15 @@
         "esp_eth.h": "c",
         "esp_eth_driver.h": "c",
         "nvs_flash.h": "c",
-        "esp_netif.h": "c"
+        "esp_netif.h": "c",
+        "mdns.h": "c",
+        "modbus_params.h": "c",
+        "esp_mac.h": "c",
+        "esp_event.h": "c",
+        "mbcontroller.h": "c",
+        "modbus.h": "c",
+        "condition_variable": "c",
+        "future": "c",
+        "esp_err.h": "c"
     }
 }
