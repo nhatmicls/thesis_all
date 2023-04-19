@@ -14,6 +14,7 @@
 #include "./../components/Wifi/include/Wifi.h"
 #include "./../components/Ethernet/include/Ethernet.h"
 #include "./../components/modbus/include/modbus.h"
+#include "./../components/sync_data/include/sync_data.h"
 
 #define BLINK_GPIO 45
 #define CONFIG_BLINK_PERIOD 1000
@@ -25,9 +26,10 @@ static void blink_led(void)
 {
     while (1)
     {
-        ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
+        // ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
         gpio_set_level(BLINK_GPIO, s_led_state);
         s_led_state = !s_led_state;
+        printf("45: %d\n", s_led_state);
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
     }
 }
@@ -48,6 +50,7 @@ void app_main(void)
     }
 
     TaskHandle_t ledHandle = NULL;
+    TaskHandle_t syncHandle = NULL;
 
     esp_event_loop_args_t loop_wifi_args = {
         .queue_size = 10,
@@ -73,10 +76,13 @@ void app_main(void)
     wifi_init_squence("PIF_CLUB", "chinsochin", true, &loop_wifi_args);
     printf("Modbus init\n");
     init_modbus_system(&loop_args_modbus);
+    init_sync_data_func();
     // ethernet_init_main();
     configure_led();
 
-    xTaskCreate(blink_led, "Led_Task", 1024, NULL, 10, &ledHandle);
+    // xTaskCreate(blink_led, "Led_Task", 2048, NULL, 10, &ledHandle);
+    xTaskCreate(task_sync_data, "sync_Task", 2048, NULL, 10, &syncHandle);
+    xTaskCreate(slave_operation_func, "modbus_task", 2048 * 2, NULL, 6, NULL);
 
     while (1)
     {

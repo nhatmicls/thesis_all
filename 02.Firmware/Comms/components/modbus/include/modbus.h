@@ -22,6 +22,7 @@ extern "C"
     ESP_EVENT_DECLARE_BASE(TASK_EVENTS);
 
     void init_modbus_system(esp_event_loop_args_t *loop_args);
+    void slave_operation_func(void *arg);
 
 #ifdef __cplusplus
 }
