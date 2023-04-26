@@ -1,3 +1,6 @@
 [submodule "04.Server/thesis_server_config"]
 	path = 04.Server/thesis_server_config
 	url = git@github.com:nhatmicls/thesis_server_config.git
+[submodule "01.Hardware"]
+	path = 01.Hardware
+	url = git@github.com:nhatmicls/IoT-Hardware.git
