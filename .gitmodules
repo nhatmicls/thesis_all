@@ -4,3 +4,6 @@
 [submodule "01.Hardware"]
 	path = 01.Hardware
 	url = git@github.com:nhatmicls/IoT-Hardware.git
+[submodule "05.Web"]
+	path = 05.Web
+	url = git@github.com:nhatmicls/thesis_web.git
