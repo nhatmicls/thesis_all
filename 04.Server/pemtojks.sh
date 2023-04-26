@@ -1,0 +1,3 @@
+openssl pkcs12 -export -in client.crt -inkey client.key -out client.p12 -name client -CAfile rootCA.crt -caname root
+keytool -import -trustcacerts -keystore truststore.jks -storepass password -noprompt -file client.crt -alias client
+keytool -importkeystore -deststorepass password -destkeypass password -destkeystore keystore.jks -srckeystore client.p12 -srcstoretype PKCS12 -srcstorepass password -alias client
