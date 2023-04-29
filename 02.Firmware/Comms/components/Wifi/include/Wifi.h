@@ -25,8 +25,13 @@ extern "C"
 #define ESP_MAXIMUM_RETRY 10
 #define NETIF_DESC_STA "wifi_sta"
 
-#define SSID "PIF_CLUB"
-#define PASS "chinsochin"
+#define SSID_1 "PIF_CLUB"
+#define PASS_1 "chinsochin"
+#define SSID_2 "Morning"
+#define PASS_2 "nowaytohide4520@#"
+
+#define SSID SSID_2
+#define PASS PASS_2
 
 #define CONFIG_ESP_WIFI_AUTH_WPA2_PSK 1
 

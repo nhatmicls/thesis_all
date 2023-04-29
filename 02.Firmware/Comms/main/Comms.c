@@ -73,7 +73,7 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_netif_init());
 
     printf("Wifi init\n");
-    wifi_init_squence("PIF_CLUB", "chinsochin", true, &loop_wifi_args);
+    wifi_init_squence(SSID, PASS, true, &loop_wifi_args);
     printf("Modbus init\n");
     init_modbus_system(&loop_args_modbus);
     init_sync_data_func();

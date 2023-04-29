@@ -194,7 +194,7 @@ static esp_err_t slave_init(mb_communication_info_t *comm_info)
     reg_area.type = MB_PARAM_HOLDING;                                           // Set type of register area
     reg_area.start_offset = MB_REG_HOLDING_START_AREA0;                         // Offset of register area in Modbus protocol
     reg_area.address = (void *)&holding_reg_params.holding_float_data_block[0]; // Set pointer to storage instance
-    reg_area.size = (MB_REG_HOLDING_START_AREA1 - MB_REG_HOLDING_START_AREA0);  // Set the size of register storage instance
+    reg_area.size = (sizeof(float) + sizeof(int)) * SIZE_HOLDING;               // Set the size of register storage instance
     printf("%d\n", reg_area.size);
     err = mbc_slave_set_descriptor(reg_area);
     MB_RETURN_ON_FALSE((err == ESP_OK), ESP_ERR_INVALID_STATE,
@@ -202,34 +202,34 @@ static esp_err_t slave_init(mb_communication_info_t *comm_info)
                        "mbc_slave_set_descriptor fail, returns(0x%x).",
                        (uint32_t)err);
 
-    reg_area.type = MB_PARAM_HOLDING;                                         // Set type of register area
-    reg_area.start_offset = MB_REG_HOLDING_START_AREA1;                       // Offset of register area in Modbus protocol
-    reg_area.address = (void *)&holding_reg_params.holding_int_data_block[0]; // Set pointer to storage instance
-    reg_area.size = SIZE_HOLDING;                                             // Set the size of register storage instance
-    err = mbc_slave_set_descriptor(reg_area);
-    MB_RETURN_ON_FALSE((err == ESP_OK), ESP_ERR_INVALID_STATE,
-                       TAG,
-                       "mbc_slave_set_descriptor fail, returns(0x%x).",
-                       (uint32_t)err);
+    // reg_area.type = MB_PARAM_HOLDING;                                         // Set type of register area
+    // reg_area.start_offset = MB_REG_HOLDING_START_AREA1;                       // Offset of register area in Modbus protocol
+    // reg_area.address = (void *)&holding_reg_params.holding_int_data_block[0]; // Set pointer to storage instance
+    // reg_area.size = SIZE_HOLDING;                                             // Set the size of register storage instance
+    // err = mbc_slave_set_descriptor(reg_area);
+    // MB_RETURN_ON_FALSE((err == ESP_OK), ESP_ERR_INVALID_STATE,
+    //                    TAG,
+    //                    "mbc_slave_set_descriptor fail, returns(0x%x).",
+    //                    (uint32_t)err);
 
     reg_area.type = MB_PARAM_INPUT;
     reg_area.start_offset = MB_REG_INPUT_START_AREA0;
     reg_area.address = (void *)&input_reg_params.input_float_data_block[0];
-    reg_area.size = (MB_REG_INPUT_START_AREA1 - MB_REG_INPUT_START_AREA0);
+    reg_area.size = (sizeof(float) + sizeof(int)) * SIZE_INPUT;
     err = mbc_slave_set_descriptor(reg_area);
     MB_RETURN_ON_FALSE((err == ESP_OK), ESP_ERR_INVALID_STATE,
                        TAG,
                        "mbc_slave_set_descriptor fail, returns(0x%x).",
                        (uint32_t)err);
-    reg_area.type = MB_PARAM_INPUT;
-    reg_area.start_offset = MB_REG_INPUT_START_AREA1;
-    reg_area.address = (void *)&input_reg_params.input_int_data_block[0];
-    reg_area.size = sizeof(int) * SIZE_INPUT;
-    err = mbc_slave_set_descriptor(reg_area);
-    MB_RETURN_ON_FALSE((err == ESP_OK), ESP_ERR_INVALID_STATE,
-                       TAG,
-                       "mbc_slave_set_descriptor fail, returns(0x%x).",
-                       (uint32_t)err);
+    // reg_area.type = MB_PARAM_INPUT;
+    // reg_area.start_offset = MB_REG_INPUT_START_AREA1;
+    // reg_area.address = (void *)&input_reg_params.input_int_data_block[0];
+    // reg_area.size = sizeof(int) * SIZE_INPUT;
+    // err = mbc_slave_set_descriptor(reg_area);
+    // MB_RETURN_ON_FALSE((err == ESP_OK), ESP_ERR_INVALID_STATE,
+    //                    TAG,
+    //                    "mbc_slave_set_descriptor fail, returns(0x%x).",
+    //                    (uint32_t)err);
 
     // Initialization of Coils register area
     reg_area.type = MB_PARAM_COIL;

@@ -7,3 +7,6 @@
 [submodule "05.Web"]
 	path = 05.Web
 	url = git@github.com:nhatmicls/thesis_web.git
+[submodule "03.Software/02.Collector"]
+	path = 03.Software/02.Collector
+	url = git@github.com:nhatmicls/thesis_collector.git
