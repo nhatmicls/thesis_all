@@ -19,6 +19,8 @@
         "adc_continuous.h": "c",
         "array": "cpp",
         "string": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "sync_data.h": "c",
+        "spi_adc.h": "c"
     }
 }

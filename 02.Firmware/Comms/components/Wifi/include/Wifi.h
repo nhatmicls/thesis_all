@@ -29,9 +29,11 @@ extern "C"
 #define PASS_1 "chinsochin"
 #define SSID_2 "Morning"
 #define PASS_2 "nowaytohide4520@#"
+#define SSID_3 "Nyx"
+#define PASS_3 "tamsotam"
 
-#define SSID SSID_2
-#define PASS PASS_2
+#define SSID SSID_3
+#define PASS PASS_3
 
 #define CONFIG_ESP_WIFI_AUTH_WPA2_PSK 1
 

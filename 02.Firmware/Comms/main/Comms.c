@@ -15,8 +15,10 @@
 #include "./../components/Ethernet/include/Ethernet.h"
 #include "./../components/modbus/include/modbus.h"
 #include "./../components/sync_data/include/sync_data.h"
+#include "./../components/gpio_system/include/gpio_system.h"
+#include "./../components/adc_system/include/adc_system.h"
 
-#define BLINK_GPIO 45
+#define BLINK_GPIO INTERNAL_LED_1
 #define CONFIG_BLINK_PERIOD 1000
 
 static uint8_t s_led_state = 0;
@@ -29,15 +31,8 @@ static void blink_led(void)
         // ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
         gpio_set_level(BLINK_GPIO, s_led_state);
         s_led_state = !s_led_state;
-        printf("45: %d\n", s_led_state);
         vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
     }
-}
-
-static void configure_led(void)
-{
-    gpio_reset_pin(BLINK_GPIO);
-    gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
 }
 
 void app_main(void)
@@ -72,15 +67,27 @@ void app_main(void)
 
     ESP_ERROR_CHECK(esp_netif_init());
 
+    init_adc();
+    init_gpio();
+    set_gpio_status(INTERNAL_LED_1, 0);
+    vTaskDelay(500 / portTICK_PERIOD_MS);
+
     printf("Wifi init\n");
     wifi_init_squence(SSID, PASS, true, &loop_wifi_args);
+    set_gpio_status(INTERNAL_LED_2, 0);
+    vTaskDelay(500 / portTICK_PERIOD_MS);
+
     printf("Modbus init\n");
     init_modbus_system(&loop_args_modbus);
-    init_sync_data_func();
     // ethernet_init_main();
-    configure_led();
+    set_gpio_status(INTERNAL_LED_3, 0);
+    vTaskDelay(500 / portTICK_PERIOD_MS);
 
-    // xTaskCreate(blink_led, "Led_Task", 2048, NULL, 10, &ledHandle);
+    set_gpio_status(INTERNAL_LED_1, 1);
+    set_gpio_status(INTERNAL_LED_2, 1);
+    set_gpio_status(INTERNAL_LED_3, 1);
+
+    xTaskCreate(blink_led, "Led_Task", 2048, NULL, 10, &ledHandle);
     xTaskCreate(task_sync_data, "sync_Task", 2048, NULL, 10, &syncHandle);
     xTaskCreate(slave_operation_func, "modbus_task", 2048 * 2, NULL, 6, NULL);
 

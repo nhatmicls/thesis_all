@@ -5,6 +5,7 @@
 #include "esp_err.h"
 #include "esp_event.h"
 #include "esp_adc/adc_continuous.h"
+#include "./../../spi_adc/include/spi_adc.h"
 
 #ifdef __cplusplus
 extern "C"

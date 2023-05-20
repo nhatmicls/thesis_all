@@ -22,7 +22,6 @@ extern "C"
 #endif
 
     void task_sync_data(void);
-    void init_sync_data_func(void);
 
 #ifdef __cplusplus
 }

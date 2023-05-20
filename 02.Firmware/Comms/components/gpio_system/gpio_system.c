@@ -50,10 +50,22 @@ void init_gpio(void)
     ESP_ERROR_CHECK(gpio_set_direction(EXTERNAL_OUTPUT_4, GPIO_MODE_OUTPUT));
     gpio_reset_pin(EXTERNAL_OUTPUT_5);
     ESP_ERROR_CHECK(gpio_set_direction(EXTERNAL_OUTPUT_5, GPIO_MODE_OUTPUT));
+
+    // Default value
+    ESP_ERROR_CHECK(gpio_set_level(INTERNAL_LED_1, 0));
+    ESP_ERROR_CHECK(gpio_set_level(INTERNAL_LED_2, 0));
+    ESP_ERROR_CHECK(gpio_set_level(INTERNAL_LED_3, 0));
+
+    ESP_ERROR_CHECK(gpio_set_level(EXTERNAL_OUTPUT_1, 0));
+    ESP_ERROR_CHECK(gpio_set_level(EXTERNAL_OUTPUT_2, 0));
+    ESP_ERROR_CHECK(gpio_set_level(EXTERNAL_OUTPUT_3, 0));
+    ESP_ERROR_CHECK(gpio_set_level(EXTERNAL_OUTPUT_4, 0));
+    ESP_ERROR_CHECK(gpio_set_level(EXTERNAL_OUTPUT_5, 0));
 }
 
 int get_gpio_status(gpio_num_t gpio_pin)
 {
+    // printf("%d:%d\n", gpio_pin, !gpio_get_level(gpio_pin));
     return gpio_get_level(gpio_pin);
 }
 
